@@ -75,6 +75,7 @@ void draw() {
 }
 
 void reset() {  //Resets all values 
+  loop();
   pressed = false;
   failMix = false;
   frequency = 3;
@@ -151,6 +152,7 @@ void drawScientist() {
     text("reached endpoint!", 680, 130);
     text("Press reset to try again.", 680, 180);
     image(check, 500, 350);
+    noLoop();
   }
 }
 
