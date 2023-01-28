@@ -5,7 +5,6 @@ class Burette {
   int y;
   ArrayList<Dropplet> drops;
   float amount;
-  float initialV;
   float currentV;
   Titrant titrant;
   Beaker beaker;
@@ -16,7 +15,6 @@ class Burette {
   Burette(Titrant t, Beaker b, float v, int xC, int yC) {
     this.titrant = t;
     this.beaker = b;
-    this.initialV = v;
     this.currentV = v;
     this.x = xC;
     this.y = yC;
