@@ -68,7 +68,7 @@ class Beaker {
     }
     else if (this.mixPress) {  //when user tried to mix after endpoint, nothing happens
       pressed = false;
-      if (frame - mixStart >40) {  //when mixing has finished, sets darkness to lighter value
+      if (frame - mixStart >40) {  //when mixing has finished
         this.mixPress = false;
         failMix = false;
         return false;

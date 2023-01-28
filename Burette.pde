@@ -71,7 +71,6 @@ class Burette {
         d.inBeaker = true;
         this.beaker.dropAmount = (this.beaker.dropAmount +(dropSize/10.0));
         this.beaker.darkness = min(this.beaker.darkness+(dropSize/10.0), 16);
-
         drops.remove(i);
       } else if ((d.y<height)&&(d.y>0)&&(d.inBeaker == false)) {  //If drop is anywhere else and still on screen, still draw
         d.drawDrop();
