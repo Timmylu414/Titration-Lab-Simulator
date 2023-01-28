@@ -44,7 +44,7 @@ class Burette {
       if (this.amount > 40) {
         //println("FRAME:", frame);
         //println("Frequency:", frequency);
-        if (frame%(21-frequency) == 0) {  //Increase in frequency causes burette to drip faster
+        if (frame%(41-(frequency*4)) == 0) {  //Increase in frequency causes burette to drip faster
           Dropplet drop = new Dropplet(this.x, this.y+125, dropSize);
           //Add drop to list of drops 
           drops.add(drop);

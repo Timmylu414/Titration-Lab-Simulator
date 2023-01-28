@@ -82,8 +82,8 @@ void reset() {  //Resets all values
     bur = new Burette(HClblue, bea, 100, 500, 200);
   }
   
-  frequency = 5;
-  dropSize = 10;
+  frequency = 3;
+  dropSize = 8;
 
   bea.drawBeaker();
   bea.fillBeaker();
