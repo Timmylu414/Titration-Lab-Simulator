@@ -4,7 +4,7 @@ class Analyte {
   String name;
   float concentration;
   float volume;
-  float numMol;
+  float mol;
   color initialC;
   color finalC;
   
@@ -13,7 +13,7 @@ class Analyte {
     this.name = n;
     this.concentration = c;
     this.volume = v;
-    this.numMol = c * v;
+    this.mol = c * v;
     this.initialC = iC;
     this.finalC = fC;
   }

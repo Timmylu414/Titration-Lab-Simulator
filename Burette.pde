@@ -69,9 +69,10 @@ class Burette {
      
       if ((d.y>bea.y+50)&&(this.beaker.x < d.x)&&(d.x < this.beaker.x+this.beaker.w)) {  //Checks if drop entered the beaker
         d.inBeaker = true;
-        this.beaker.numDrops +=1;
+        this.beaker.dropAmount = roundThousandth(this.beaker.dropAmount +0.001);
         this.beaker.darkness = min(this.beaker.darkness+1, 16);
-        println(beaker.numDrops);
+        println(beaker.dropAmount);
+        println("bearker max = ",beaker.max);
         drops.remove(i);
       } else if ((d.y<height)&&(d.y>0)&&(d.inBeaker == false)) {
         d.drawDrop();

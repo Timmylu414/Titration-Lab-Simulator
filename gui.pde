@@ -20,7 +20,7 @@ synchronized public void win_draw1(PApplet appc, GWinData data) { //_CODE_:windo
 
 public void button1_click1(GButton source, GEvent event) { //_CODE_:Drop:517747:
   if (pressed == false) {
-    if (bea.mixing == false) {
+    if (bea.mixPress == false) {
       pressed = true;
       Drop.setText("stop");
       mix.setEnabled(true);
@@ -51,7 +51,7 @@ public void slider1_change2(GSlider source, GEvent event) { //_CODE_:Size:357543
 
 public void button1_click2(GButton source, GEvent event) { //_CODE_:mix:934370:
   mixStart = frame;
-  bea.mixing = true;
+  bea.mixPress = true;
   Drop.setText("start");
   mix.setEnabled(false);
 } //_CODE_:mix:934370:
