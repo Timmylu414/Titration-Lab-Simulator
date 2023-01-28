@@ -7,13 +7,11 @@ class Beaker {
   int y;
   int w;
   int h;
-  int numDrops;
   float dropAmount;
   int darkness;
   float max;
   boolean mixPress;
   boolean mix;
-
 
   //CONSTRUCTOR
   Beaker (Analyte a, Titrant t, int xC, int yC, int width, int height) {
@@ -23,7 +21,6 @@ class Beaker {
     this.y = yC;
     this.w = width;
     this.h = height;
-    this.numDrops = 0;
     this.dropAmount = 0;
     this.darkness = 0;
     this.max = t.volume;

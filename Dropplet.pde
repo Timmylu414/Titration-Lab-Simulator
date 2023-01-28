@@ -17,7 +17,6 @@ class Dropplet {
   }
   
   //METHODS
-  
   void drawDrop() {
     fill(200,200,255);
     circle(this.x, this.y, r);
