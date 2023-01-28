@@ -27,6 +27,7 @@ public void button1_click1(GButton source, GEvent event) { //_CODE_:Drop:517747:
     } else {
       failMix = true;
       scientistFrame = frame;
+      mix.setEnabled(true);
     }
   } else { 
     pressed = false;
@@ -100,10 +101,10 @@ public void createGUI(){
   Speed.setLocalColorScheme(GCScheme.YELLOW_SCHEME);
   Speed.setOpaque(false);
   Speed.addEventHandler(this, "slider1_change1");
-  Size = new GSlider(window1, 84, 322, 190, 56, 15.0);
+  Size = new GSlider(window1, 87, 322, 190, 56, 15.0);
   Size.setShowValue(true);
   Size.setShowLimits(true);
-  Size.setLimits(8, 5, 15);
+  Size.setLimits(10, 5, 15);
   Size.setNbrTicks(9);
   Size.setStickToTicks(true);
   Size.setShowTicks(true);

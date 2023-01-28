@@ -3,12 +3,12 @@ class Dropplet {
   //FIELDS
   int x;
   int y;
-  int r;
+  float r;
   float speed;
   boolean inBeaker;
   
   //CONSTRUCTOR
-  Dropplet(int xC, int yC, int r) {
+  Dropplet(int xC, int yC, float r) {
     this.x = xC;
     this.y = yC;
     this.r = r;

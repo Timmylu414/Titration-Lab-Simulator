@@ -34,11 +34,11 @@ void setup() {
   drawBack();
 
   //Creating titrants, analytes, beakers, and burettes
-  NaOH = new Titrant("NaOH", float(values[0]), float(values[1]));
-  HClpink = new Analyte("HCl", float(values[2]), float(values[3]), color(200, 200, 255), color(239, 80, 255));
+  NaOH = new Titrant("NaOH", float(values[0]), float(values[1])*1000);
+  HClpink = new Analyte("HCl", float(values[2]), float(values[3])*1000, color(200, 200, 255), color(239, 80, 255));
 
-  HClblue = new Titrant("HCl", float(values[4]), float(values[5]));
-  CaOH2 = new Analyte("Ca(OH)2", float(values[6]), float(values[7]), color(50, 180, 190), color(255, 227, 19));
+  HClblue = new Titrant("HCl", float(values[4]), float(values[5])*1000);
+  CaOH2 = new Analyte("Ca(OH)2", float(values[6]), float(values[7])*1000, color(50, 180, 190), color(255, 227, 19));
 
   bea = new Beaker(HClpink, NaOH, 400, 400, 200, 240);
   bur = new Burette(NaOH, bea, 100, 500, 200);
@@ -144,13 +144,13 @@ void displayStats() {  //displays values of concentrations, volumes, and amount 
   text("Titration", 50, 100);
   textSize(20);
   text(bur.titrant.name + " concentration: " + bur.titrant.concentration + " mol/L", 50, 140);
-  text(bur.titrant.name + " added: " + bea.dropAmount + " L", 50, 170);
+  text(bur.titrant.name + " added: " + roundValue(bea.dropAmount) + " mL", 50, 170);
   text(bea.analyte.name + " concentration: " + "?", 50, 200);
-  text(bea.analyte.name + " volume: " + bea.analyte.volume + " L", 50, 230);
+  text(bea.analyte.name + " volume: " + bea.analyte.volume + " mL", 50, 230);
 }
 
-float roundThousandth(float f) {  //rounds values to the nearest thousandth
-  f = float(round(f*1000));
-  f = f/1000;
+float roundValue(float f) {  //rounds values to the nearest ten-thousandth
+  f = float(round(f*10000));
+  f = f/10000;
   return f;
 }

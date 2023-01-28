@@ -48,8 +48,8 @@ class Burette {
           Dropplet drop = new Dropplet(this.x, this.y+125, dropSize);
           //Add drop to list of drops 
           drops.add(drop);
-          this.amount -= 1;
-          this.currentV -= 1;
+          this.amount -= dropSize/8;
+          this.currentV -= dropSize/8;
           //println(this.amount);
         }
       } else {
@@ -68,10 +68,11 @@ class Burette {
 
       if ((d.y>bea.y+50)&&(this.beaker.x < d.x)&&(d.x < this.beaker.x+this.beaker.w)) {  //Checks if drop entered the beaker
         d.inBeaker = true;
-        this.beaker.dropAmount = roundThousandth(this.beaker.dropAmount +0.001);
-        this.beaker.darkness = min(this.beaker.darkness+1, 16);
+        this.beaker.dropAmount = (this.beaker.dropAmount +(dropSize/10.0));
+        println(roundValue(dropSize/10.0));
+        this.beaker.darkness = min(this.beaker.darkness+(dropSize/10.0), 16);
         println(beaker.dropAmount);
-        println("bearker max = ", beaker.max);
+       
         drops.remove(i);
       } else if ((d.y<height)&&(d.y>0)&&(d.inBeaker == false)) {  //If drop is anywhere else and still on screen, still draw
         d.drawDrop();
