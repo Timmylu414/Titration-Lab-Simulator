@@ -37,7 +37,7 @@ class Burette {
 
   void fillBurette() {
     fill(200, 200, 255);
-    rect(this.x-18, this.y + 10+(100-this.amount), 36, 60 - (100-this.amount), 0, 0, 30, 30);
+    rect(this.x-18, this.y + 10+(100-(this.currentV+40)), 36, 60 - (100-this.amount), 0, 0, 30, 30);
     rect(this.x-5, this.y+70, 10, 55);
   }
 
