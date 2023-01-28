@@ -4,7 +4,7 @@ PImage scientist;
 PImage check;
 int frame = 0;
 int mixStart = 0;
-int scientistFrame = 0;
+int scientistFrame = -50;
 boolean pressed = false;
 boolean failMix = false;
 int dropSize = 10;
@@ -108,7 +108,7 @@ void drawBack() {
 
 void drawScientist() {
 
-  if ((failMix == true)&&(bea.mixPress==true)) {  //When users try to start dropping again but mixing isn't finish, scientist gives them friendly reminder
+  if ((failMix == true)||(frame - scientistFrame)<40) {  //When users try to start dropping again but mixing isn't finish, scientist gives them friendly reminder
     image(scientist, 750, 250);
     rect(650, 40, 300, 180, 50);
     triangle(800, 220, 850, 220, 870, 240);
