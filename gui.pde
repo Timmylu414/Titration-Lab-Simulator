@@ -36,8 +36,8 @@ public void button1_click1(GButton source, GEvent event) { //_CODE_:Drop:517747:
 } //_CODE_:Drop:517747:
 
 public void button1_click4(GButton source, GEvent event) { //_CODE_:Reset:319241:
-  Speed.setLimits(5, 1, 20);
-  Size.setLimits(8, 1, 15);
+  Speed.setLimits(3, 1, 10);
+  Size.setLimits(10, 5, 15);
   Drop.setText("start");
   reset();
 } //_CODE_:Reset:319241:

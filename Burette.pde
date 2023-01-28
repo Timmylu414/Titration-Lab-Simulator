@@ -44,12 +44,13 @@ class Burette {
       if (this.amount > 40) {
         //println("FRAME:", frame);
         //println("Frequency:", frequency);
-        if (frame%(41-(frequency*4)) == 0) {  //Increase in frequency causes burette to drip faster
+        if (frame % (41-(frequency*4)) == 0) {  //Increase in frequency causes burette to drip faster
           Dropplet drop = new Dropplet(this.x, this.y+125, dropSize);
           //Add drop to list of drops 
           drops.add(drop);
-          this.amount -= dropSize/8;
-          this.currentV -= dropSize/8;
+          this.amount -= dropSize/10.0;
+          this.currentV -= dropSize/10.0;
+          println("bamount: ", this.amount);
           //println(this.amount);
         }
       } else {
@@ -69,10 +70,8 @@ class Burette {
       if ((d.y>bea.y+50)&&(this.beaker.x < d.x)&&(d.x < this.beaker.x+this.beaker.w)) {  //Checks if drop entered the beaker
         d.inBeaker = true;
         this.beaker.dropAmount = (this.beaker.dropAmount +(dropSize/10.0));
-        println(roundValue(dropSize/10.0));
         this.beaker.darkness = min(this.beaker.darkness+(dropSize/10.0), 16);
-        println(beaker.dropAmount);
-       
+
         drops.remove(i);
       } else if ((d.y<height)&&(d.y>0)&&(d.inBeaker == false)) {  //If drop is anywhere else and still on screen, still draw
         d.drawDrop();
