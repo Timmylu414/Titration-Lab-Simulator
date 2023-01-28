@@ -22,14 +22,18 @@ Burette bur;
 
 void setup() {
   values = loadStrings("values.txt");
-  printArray(values);
+  lab = loadImage("lab.jpg");
+  lab.resize(1500, 800);
+  scientist = loadImage("scientist.png");
+  
+  
   createGUI();
   size(1000, 700);
-  frameRate(45);
+  frameRate(30);
   noStroke();
-  background(0);
+  drawBack();
 
-  //getValues(values);  
+  //Creating titrants, analytes, beakers, and burettes
   NaOH = new Titrant("NaOH", float(values[0]), float(values[1]));
   HClpink = new Analyte("HCl", float(values[2]), float(values[3]), color(200, 200, 255), color(239, 80, 255));
 
@@ -39,13 +43,13 @@ void setup() {
   bea = new Beaker(HClpink, NaOH, 400, 400, 200, 240);
   bur = new Burette(NaOH, bea, 100, 500, 200);
 
-  drawBack();
-
   bea.drawBeaker();
   bea.fillBeaker();
 
   bur.drawBurette();
   bur.fillBurette();
+  
+  printArray(values);
   displayStats();
 }
 
@@ -101,18 +105,14 @@ void reset() {
 
 void drawBack() {
   //Draws background
-
   tint(255, 150);
-  lab = loadImage("lab.jpg");
-  lab.resize(1500, 800);
   image(lab, -100, -55);
   noTint();
 }
 
 
 void drawScientist() {
-  noTint();
-  scientist = loadImage("scientist.png");
+  //noTint();
   scientist.resize(600, 600);
 
   if ((failMix == true)&&(bea.mixPress==true)) {
