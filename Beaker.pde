@@ -49,8 +49,8 @@ class Beaker {
       rect(this.x+10, this.y+50, this.w-20, this.h-60, 0, 0, 20, 20);
     } else if ((this.mix == true)&&(numDrops<max)) {
       int mixFrame = frame - mixStart;
-      fill(this.analyte.finalC, max(pow(darkness, 2)-((mixFrame-30)*10), pow(darkness-6, 2)));
-      println(pow(darkness, 2)-((mixFrame-30)*10));
+      fill(this.analyte.finalC, max(pow(darkness, 2)-((mixFrame-20)*5), pow(darkness-6, 2)));
+      println(pow(darkness, 2)-((mixFrame-20)*5));
       rect(this.x+10, this.y+50, this.w-20, this.h-60, 0, 0, 20, 20);
     }
     //move stuff into mixBeaker() and disable button
@@ -59,24 +59,24 @@ class Beaker {
   void mixBeaker() {
     if ((this.mixing == true)&&(numDrops<max)) {
       pressed = false;
-      if (frame - mixStart >60) {  //mixing has finished
+      if (frame - mixStart >40) {  //mixing has finished
         println(darkness);
-        darkness = max(darkness-6, 0);
+        darkness = max(darkness-3, 0);
         this.mixing = false;
         this.mix = false;
         failMix = false;
 
         //pressed = true;
-      } else if (frame - mixStart > 30) {
+      } else if (frame - mixStart > 20) {
         this.mix = true;
       }
     } else if ((this.mixing == true)&&(numDrops>max)) {
       pressed = false;
-      if (frame - mixStart >60) {
+      if (frame - mixStart >40) {
         this.mixing = false;
         this.mix = false;
         pressed = true;
-      } else if (frame - mixStart > 30) {
+      } else if (frame - mixStart > 20) {
         this.mix = true;
       }
     }

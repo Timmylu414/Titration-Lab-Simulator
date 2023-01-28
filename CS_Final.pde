@@ -32,7 +32,7 @@ void setup() {
   values = loadStrings("values.txt");
   createGUI();
   size(1000, 700);
-  frameRate(30);
+  frameRate(45);
   noStroke();
   background(0);
 
@@ -75,7 +75,6 @@ void draw() {
 void reset() {
   pressed = false;
   failMix = false;
-  Drop.setText("start");
 
   if (selectedIndex == 0) {
     bea = new Beaker(HClpink, 400, 400, 200, 240);
