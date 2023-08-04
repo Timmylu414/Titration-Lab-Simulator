@@ -1,6 +1,6 @@
 # Titration
 
-Titration visual simution for grade 11/12 chemistry students - Titrate just like you would in a school chemistry lab! Users have the option of choosing either to titrate using 
+Titration visual simution for grade 11/12 chemistry students - Titrate just like you would in a school chemistry lab! Users have the option of choosing either to titrate using NaOH and HCL, or 
 
 # Screenshots
 <img width="502" alt="Screenshot 2023-08-04 174033" src="https://github.com/Timmylu414/Titration-Lab-Simulator/assets/75452456/43f3bf67-b6eb-489e-8613-1f4ab3ad7861">
